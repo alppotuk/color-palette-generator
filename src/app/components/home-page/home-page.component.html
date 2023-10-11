@@ -1,0 +1,23 @@
+<div class="page-container">
+  <header>
+    <h1>Analogous Color Palette Generator</h1>
+  </header>
+  <div class="colors-container">
+    <app-color-box *ngFor="let color of colors" [color]="color"></app-color-box>
+  </div>
+
+  <div class="control-panel">
+    <div>left color</div>
+    <div class="controller-area">
+      <div class="controller">
+        <div class="button left" (click)="changeNumOfColors(-1)">-</div>
+        <div>{{ numOfColors }}</div>
+        <div class="button right" (click)="changeNumOfColors(+1)">+</div>
+      </div>
+      <div>
+        <button mat-button (click)="updatePalette()">update palette</button>
+      </div>
+    </div>
+    <div>right color</div>
+  </div>
+</div>
