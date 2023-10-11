@@ -1,0 +1,12 @@
+<div
+  class="color-wrapper"
+  (mouseenter)="showInfoBox()"
+  (mouseleave)="hideInfoBox()"
+  [ngStyle]="{ 'background-color': color.hex.value }"
+>
+  <div class="color-box"></div>
+
+  <div class="color-info-box" *ngIf="showInfo">
+    {{ color.hex.value ? color.hex.value : "sıkıntı var" }}
+  </div>
+</div>
