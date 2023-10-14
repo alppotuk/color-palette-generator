@@ -3,7 +3,6 @@
   flex-direction: column;
   height: 96vh;
   flex: 1;
-  background-color: beige;
   div {
     display: flex;
   }
@@ -18,22 +17,19 @@ app-color-box {
   display: flex;
   flex: 1;
 }
-.colors-container {
-  background-color: antiquewhite;
-  flex-direction: row;
-  justify-content: space-between;
-}
+
 .control-panel {
   flex: 1;
-  background-color: rgb(1, 199, 199);
   justify-content: space-between;
 }
 .controller-area {
   flex-direction: column;
+  justify-content: space-around;
+}
+.color-info-container {
   justify-content: space-between;
-  background-color: antiquewhite;
-  div {
-  }
+  background-color: aqua;
+  flex-basis: 40%;
 }
 .controller {
   justify-content: space-between;
@@ -47,11 +43,26 @@ app-color-box {
     align-items: center;
   }
 }
-.button {
+.numerator-button {
   height: 100%;
   background-color: rgb(221, 221, 221);
   transition: 0.1s ease-in-out;
 }
-.button:hover {
-  background-color: rgb(197, 197, 197);
+.numerator-button:hover {
+  background-color: rgb(156, 176, 192);
+}
+.update-button {
+  background-color: #c5c5c5;
+  transition: 0.1s ease-in-out;
+}
+
+.update-button:hover {
+  background-color: rgb(156, 176, 192);
+  p {
+    color: white;
+  }
+}
+
+app-color-options {
+  flex: 1;
 }

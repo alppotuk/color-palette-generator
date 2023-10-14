@@ -10,6 +10,7 @@ import { ColorService } from 'src/app/services/color.service';
 export class HomePageComponent implements OnInit {
   colors: IColor[] = [];
   numOfColors: number = 2;
+  position = true;
   constructor(private colorService: ColorService) {}
 
   ngOnInit(): void {

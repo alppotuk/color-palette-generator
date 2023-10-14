@@ -1,0 +1,17 @@
+<div class="container">
+  <div
+    *ngIf="position"
+    class="color-indicator"
+    [style.backgroundColor]="color.hex.value"
+  >
+    left color
+  </div>
+  <div class="color-options">color options here</div>
+  <div
+    *ngIf="!position"
+    class="color-indicator"
+    [style.backgroundColor]="color.hex.value"
+  >
+    left color
+  </div>
+</div>
