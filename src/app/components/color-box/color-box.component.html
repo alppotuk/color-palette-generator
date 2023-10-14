@@ -4,7 +4,9 @@
   (mouseleave)="hideInfoBox()"
   [ngStyle]="{ 'background-color': color.hex.value }"
 >
-  <div class="color-box"></div>
+  <div class="color-box">
+    <p *ngIf="showInfo">{{ color.name }}</p>
+  </div>
 
   <div class="color-info-box" *ngIf="showInfo">
     {{ color.hex.value ? color.hex.value : "sıkıntı var" }}

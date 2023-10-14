@@ -10,6 +10,8 @@ import { ColorService } from 'src/app/services/color.service';
 export class HomePageComponent implements OnInit {
   colors: IColor[] = [];
   numOfColors: number = 2;
+  maxNumOfColors: number = 30;
+  minNumOfColors: number = 2;
   position = true;
   constructor(private colorService: ColorService) {}
 
@@ -19,9 +21,9 @@ export class HomePageComponent implements OnInit {
     });
   }
   changeNumOfColors(input: number): void {
-    if (input == 1) {
+    if (input == 1 && this.numOfColors < this.maxNumOfColors) {
       this.numOfColors++;
-    } else if (input == -1 && this.numOfColors > 2) {
+    } else if (input == -1 && this.numOfColors > this.minNumOfColors) {
       this.numOfColors--;
     }
   }

@@ -10,7 +10,6 @@ import {
 } from 'rxjs';
 import { IColor } from '../interfaces/IColor';
 import { IPalette } from '../interfaces/IPalette';
-import { I18nPluralPipe } from '@angular/common';
 import { GetColorByHexRequest } from '../interfaces/GetColorByHexRequest.interface';
 @Injectable({
   providedIn: 'root',
@@ -149,5 +148,17 @@ export class ColorService {
 
     console.log('after-update:', this.palette);
     return of(this.palette.colors);
+  }
+  updateBaseColor(selected_color: string, base_num: boolean) {
+    let req: GetColorByHexRequest = {
+      hex: selected_color,
+    };
+    this.getColorByHex(req).subscribe((res) => {
+      if (base_num) {
+        this.palette.base_color_1 = res;
+      } else {
+        this.palette.base_color_2 = res;
+      }
+    });
   }
 }
